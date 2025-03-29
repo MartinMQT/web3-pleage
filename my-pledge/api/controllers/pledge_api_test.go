@@ -1,4 +1,5 @@
-package api
+package controllers
+
 
 import (
 	"net/http"
