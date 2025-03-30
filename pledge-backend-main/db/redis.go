@@ -26,10 +26,10 @@ func InitRedis() *redis.Pool {
 				return nil, err
 			}
 			// 验证密码
-			_, err = c.Do("auth", redisConf.Password)
-			if err != nil {
-				panic("redis auth err " + err.Error())
-			}
+			//_, err = c.Do("auth", redisConf.Password)
+			//if err != nil {
+			//	panic("redis auth err " + err.Error())
+			//}
 			// 选择db
 			_, err = c.Do("select", redisConf.Db)
 			if err != nil {
