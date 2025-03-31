@@ -82,9 +82,9 @@ var Msg = map[int]map[int]string{
 }
 
 func GetMsg(c int, lang int) string {
-	_, ok := Msg[c]
+	m, ok := Msg[c]
 	if ok {
-		msg, ok := Msg[c][lang]
+		msg, ok := m[lang]
 		if ok {
 			return msg
 		}

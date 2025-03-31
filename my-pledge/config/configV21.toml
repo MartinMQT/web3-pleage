@@ -74,4 +74,4 @@ from = "pledge beidge <test@gmail.com>"
 subject = "Insufficient balance of bridge account"
 to = ["XXXX@outlook.com"]
 cc = ["XXXX@126.com"]
-lang = "CN"
+lang = ""
