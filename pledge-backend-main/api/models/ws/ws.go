@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"github.com/gorilla/websocket"
-	"pledge-backend/api/models/kucoin"
+	"pledge-backend/api/models/binance"
 	"pledge-backend/config"
 	"pledge-backend/log"
 	"sync"
@@ -118,7 +118,7 @@ func StartServer() {
 	log.Logger.Info("WsServer start")
 	for {
 		select {
-		case price, ok := <-kucoin.PlgrPriceChan:
+		case price, ok := <-binance.PlgrPriceChan:
 			if ok {
 				Manager.Servers.Range(func(key, value interface{}) bool {
 					value.(*Server).SendToClient(price, SuccessCode)

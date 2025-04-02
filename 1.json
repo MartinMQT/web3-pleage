@@ -1,0 +1,6 @@
+{
+  "borrowFee": "250000",
+  "tokenLogo": "https://dev-v2-backend.pledger.finance/storage/img/BUSD.png",
+  "tokenName": "BUSD",
+  "tokenPrice": "99980000"
+}

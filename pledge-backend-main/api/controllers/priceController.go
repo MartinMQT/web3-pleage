@@ -4,6 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
 	"net/http"
+	"pledge-backend/api/models/binance"
 	"pledge-backend/api/models/ws"
 	"pledge-backend/log"
 	"pledge-backend/utils"
@@ -52,4 +53,23 @@ func (c *PriceController) NewPrice(ctx *gin.Context) {
 	}
 
 	go server.ReadAndWrite()
+}
+
+func (c *PriceController) SendBinanceMsg(ctx *gin.Context) {
+	var msg Msg
+	err2 := ctx.ShouldBind(&msg)
+	if err2 != nil {
+		log.Logger.Sugar().Error("binance msg err:", err2)
+		return
+	}
+	err := binance.Con.WriteJSON(msg)
+	if err != nil {
+		log.Logger.Sugar().Error("send binance msg err:", err)
+	}
+}
+
+type Msg struct {
+	Method string   `json:"method"`
+	Params []string `json:"params"`
+	Id     int      `json:"id"`
 }

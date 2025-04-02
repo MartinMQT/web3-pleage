@@ -13,7 +13,8 @@ const baseUrl = {
   production: 'https://pro.test.com/api',
   v22: 'https://v2-backend.pledger.finance/api/v22',
   // v21: 'https://dev-v2-backend.pledger.finance/api/v21',
-  v21: 'https://pledge.rcc-tec.xyz/api/v22',
+  // v21: 'https://pledge.rcc-tec.xyz/api/v22',
+  v21: 'http://localhost:8080/api/v21',
 };
 
 // 代理监听 URL配置

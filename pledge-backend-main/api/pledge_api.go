@@ -3,7 +3,7 @@ package main
 import (
 	"pledge-backend/api/middlewares"
 	"pledge-backend/api/models"
-	"pledge-backend/api/models/kucoin"
+	"pledge-backend/api/models/binance"
 	"pledge-backend/api/models/ws"
 	"pledge-backend/api/routes"
 	"pledge-backend/api/static"
@@ -30,7 +30,7 @@ func main() {
 	go ws.StartServer()
 
 	// get plgr price from kucoin-exchange
-	go kucoin.GetExchangePrice()
+	go binance.GetExchangePrice()
 
 	// gin start
 	gin.SetMode(gin.ReleaseMode)
